@@ -7,9 +7,9 @@ document.getElementById('game-over-lbl').appendChild(initializeBTN);
 initializeBTN.addEventListener('click', (initialEvent) => {initialEvent.target.hidden = true;});
 
 // use the value stored in the nextPlayer variable to indicate who the next player is
-let playerValue = document.querySelector('b');
+let playerVal = document.querySelector('b');
 let playersText = 'Next Player: ';
-playerValue.innerText = playersText;
+playerVal.innerText = playersText;
 
 //This call will create the buttons needed for the gameboard.
 createGameBoard();
@@ -38,9 +38,9 @@ function takeCell(event)
     /*
         When the button is clicked, the space inside its square brackets is replaced by the value in the nextPlayer before switching it
     */
-    let clickedBtn = event.target;
+    let clickedButtons = event.target;
 
-    clickedBtn.innerText = nextPlayer;
+    clickedButtons.innerText = nextPlayer;
 
     if (nextPlayer == 'X') 
     {
@@ -55,7 +55,7 @@ function takeCell(event)
 
     // Make sure the button is clickable only once (I didn't mention how to do that, look it up :) )
     
-    clickedBtn.disabled = true;
+    clickedButtons.disabled = true;
 
     // Check if the game is over
     if (isGameOver())
